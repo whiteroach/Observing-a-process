@@ -1,23 +1,275 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-button{
-  padding: 0.5rem;
+body{
+  font-family: monospace;
+  background-color: #f3f3f3;
+  background-image: url('images/RETINO.png');
+  /* background-color: #A9927D; */
 }
 
 i{
   color: black;
 }
+
+.container {
+  display: grid;
+  max-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:"nav nav"
+                      "form form"
+                      "todos todos"
+                      "footer footer";
+  margin: 0 10rem 0 10rem;
+}
+
+/* ================NAVBAR================ */
+.nav{
+  grid-area:nav;
+  max-height: 100px;
+}
+/* ================FORM================ */
+.form{
+  grid-area:form;
+  /* width: 100%; */
+  display: flex;
+  /* justify-content: space-around; */
+  height: 200px;
+  color:#f3f3f3;
+  margin-top: 3rem;
+  width: 49%;
+  /* border: 2px solid #333; */
+}
+
+.form form {
+  /* border: 1px solid #f3f3f3; */
+  height: 200px;
+  padding: 1rem;
+  background-color: #A9927D;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+}
+.form form input, .form form textarea {
+  border: 1px solid #f3f3f3;
+  width: 90%;
+  background-color: inherit;
+  margin: 0 1rem 0.5rem 1rem;
+  outline: none;
+  color: #f3f3f3;
+}
+.form form input:focus, .form form textarea:focus{
+  border:2px solid #f3f3f3;
+}
+.form form textarea{
+  resize:none;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+.form form label{
+  margin: 1rem;
+  color:#f3f3f3;
+}
+.btn-form{
+ color: #f3f3f3;
+ padding: 2px;
+}
+.btn-form:hover{
+  background-color: #f3f3f3;
+  color:#333;
+  font-weight: bolder;
+}
+
+.bg-pic{
+  background-color: #333;
+  border-top: 2px solid #333;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #f3f3f3;
+  height: 200px;
+}
+.pic{
+  display:flex;
+  justify-content: center;
+  /* margin-right: 1rem; */
+}
+.pic img:first-child {
+  font-family:'Source Code Pro', monospace ;
+  animation: 'disk' 10s infinite  linear;
+}
+.pic img:nth-child(2){
+  position: absolute;
+  align-self: center;
+  width: 30px;
+}
+
+/* .line {
+  width: 80vw;
+  border-top: 1px solid #f3f3f3;
+} */
+@keyframes disk{
+  from{
+    transform:rotate(-1deg)
+}
+to{
+    transform:rotate(360deg)
+}
+}
+/* CIRCLE-TEXT */
+.circular-text{
+  color:#f3f3f3;
+  position: relative;
+  border-radius: 100%;
+  padding: 30px;
+}
+.circular-text span{
+  position:absolute;
+}
+
+/* ================TODOS================ */
+.todos{
+  grid-area:todos;
+  display: flex;
+  justify-content: space-between;
+  /* border: #333 2px solid;
+  min-height: 50vh;
+  background-color: #A9927D; */
+}
+.todos h4{
+  padding: 0.5rem;
+  color: #333;
+  border-bottom: 1px solid #333;
+}
+/* Card */
+.card{
+  display: flex;
+  flex-direction: column;
+  /* background-color: #f3f3f3; */
+  justify-content: space-between;
+  width: 90%;
+  margin: 1rem;
+  min-height: 15vh;
+  padding: 0.5rem;
+  overflow-wrap: break-word;
+}
+.card p:first-child{
+  font-weight: bolder;
+  color: #f3f3f3;
+  border: 2px solid #333;
+  padding-bottom: 0.3rem;
+  background-color: #333;
+}
+.card p{
+  white-space: pre-line;
+}
+.btn-todo-container{
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  margin-top: 0.5rem;
+}
+.btn-todo-container button{
+ border:1px solid #333;
+ padding: 0.3rem;
+ margin-left: 0.3rem;
+}
+
+/* TO-DO */
+.toDoContainer{
+  /* grid-area:toDoContainer; */
+  /* border: #f3f3f3 1px solid; */
+  margin-right: 0.5rem;
+  width: 100%;
+  border-right: 1px solid #333;
+  border: #333 2px solid;
+  min-height: 50vh;
+  background-color: #A9927D;
+}
+
+.todo-card{
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f3f3;
+  width: 90%;
+  margin: 1rem;
+  min-height: 15vh;
+  padding: 0.5rem;
+
+}
+/* TO-DONE */
+.toDoneContainer{
+  /* grid-area:toDoneContainer; */
+  /* border: #f3f3f3 1px solid; */
+  width: 100%;
+  border: #333 2px solid;
+  min-height: 50vh;
+  background-color: #A9927D;
+  margin-left: 0.5rem;
+ 
+}
+.todone-card{
+  background-image: url('images/RETINO.png');
+}
+/* ================FOOTER================ */
+.footer{
+  grid-area:footer;
+}
+
+/* QUERIES */
+/* Smartphone */
+@media(max-width:500px){
+  .container{
+    margin: auto;
+    
+  }
+  .form{
+    flex-direction: column;
+    position: static;
+    height: auto;
+    width: 90%;
+    /* height: 80vh; */
+    margin: 3rem auto 0 auto;
+  }
+  .todos{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .toDoContainer{
+    margin-right: 0;
+    margin-top:1rem;
+    width: 90%;
+  }
+  .toDoneContainer{
+    margin-left: 0;
+    margin-top:1rem;
+    width: 90%;
+  }
+}
+/* Tablet */
+@media(min-width:501px) and (max-width:
+1200px){}
+
+/* Normal Size */
+@media(min-width:769px) and (max-width:
+1200px){}
+
+/* Widescreen*/
+@media(min-width:1201px){}
+
+/* landscape*/
+@media(min-height:500px){}
+
+
+/* colors
+#CCC7B9 bone
+#E2D4BA dutch white
+#65655E dim grey
+#A9927D grullo
+ */

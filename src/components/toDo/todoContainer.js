@@ -3,20 +3,23 @@ import ToDo from './todo'
 
 const todoContainer = ({arrToDo, handleChange, removeItem}) => {
     return (
-        <div>
+        <div className="toDoContainer">
           <h4>TODO:</h4>
-        {
-          arrToDo.map( item => {
-            return(
-            <ToDo 
-            item= {item}
-            key = {item.id}
-            onStatusChange = {handleChange}
-            removeItem = {removeItem}
-            />
-            )
-          })
-        }  
+        <div>
+          {
+            arrToDo.map( item => {
+              return(
+              <ToDo 
+              item= {item}
+              key = {item.id}
+              onStatusChange = {handleChange}
+              removeItem = {removeItem}
+              />
+              )
+            })
+          }  
+
+        </div>
         </div>
     )
 }

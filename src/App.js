@@ -3,7 +3,8 @@ import './App.css';
 import Form from './components/Form'
 import TodoContainer from './components/toDo/todoContainer';
 import ToDoneContainer from './components/toDone/toDoneContainer';
-
+import Footer from './components/footer'
+import Retino from './images/RETINO.png'
 function App() {
   const [todoList, setTodoList] = useState({
     myList:JSON.parse(localStorage.getItem("todo")) || []
@@ -59,10 +60,16 @@ function App() {
   const toDo = todoList.myList.filter(e1 => e1.done)
   const toDone = todoList.myList.filter(e2 => ! e2.done)
   return (
-    <div className="App">
+    <div className="App container">
       <Form handleAddTodo = {addItem}/>
-      <TodoContainer arrToDo = {toDo} handleChange = {updateItem} removeItem = {removeItem}/>
-      <ToDoneContainer arrToDone = {toDone} handleChange = {updateItem} removeItem = {removeItem}/>
+      <div className="todos">
+        <TodoContainer arrToDo = {toDo} handleChange = {updateItem} removeItem = {removeItem}/>
+        <ToDoneContainer arrToDone = {toDone} handleChange = {updateItem} removeItem = {removeItem}/>
+
+      </div>
+ 
+      <Footer/>
+      
     </div>
   );
 }
