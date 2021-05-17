@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
 import Form from './components/Form'
-import TodoContainer from './components/toDo/todoContainer';
-import ToDoneContainer from './components/toDone/toDoneContainer';
+import TodoContainer from './components/toDo/TodoContainer';
+import ToDoneContainer from './components/toDone/ToDoneContainer';
 import Footer from './components/footer'
 import Retino from './images/RETINO.png'
 function App() {

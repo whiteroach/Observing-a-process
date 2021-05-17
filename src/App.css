@@ -101,7 +101,7 @@ i{
 }
 .pic img:first-child {
   font-family:'Source Code Pro', monospace ;
-  animation: 'disk' 10s infinite  linear;
+  animation: 'disk' 20s infinite  linear;
 }
 .pic img:nth-child(2){
   position: absolute;
@@ -144,9 +144,27 @@ to{
 .todos h4{
   padding: 0.5rem;
   color: #333;
-  border-bottom: 1px solid #333;
+  /* border-bottom: 1px solid #333; */
 }
 /* Card */
+.title-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border:2px solid #333;
+  background-color: #A9927D;
+}
+.card-container{
+  margin-right: 0.5rem;
+  padding-top: 0.5rem;
+  width: 100%;
+  border-bottom: 2px solid #333;
+  /* border-top:2px solid #333; */
+  border-left:2px solid #333;
+  border-right:2px solid #333;
+  min-height: 50vh;
+  background-color: #A9927D;
+}
 .card{
   display: flex;
   flex-direction: column;
@@ -158,11 +176,14 @@ to{
   padding: 0.5rem;
   overflow-wrap: break-word;
 }
+.visibility{
+  visibility:hidden;
+}
 .card p:first-child{
   font-weight: bolder;
   color: #f3f3f3;
-  border: 2px solid #333;
-  padding-bottom: 0.3rem;
+  border: 1px solid #333;
+  padding: 0.3rem;
   background-color: #333;
 }
 .card p{
@@ -178,18 +199,19 @@ to{
  border:1px solid #333;
  padding: 0.3rem;
  margin-left: 0.3rem;
+ background-color: inherit;
 }
-
+.btn-todo:hover{
+  background-color: #A9927D;
+}
+.btn-toDone:hover{
+  background-color: #f3f3f3;
+}
 /* TO-DO */
 .toDoContainer{
-  /* grid-area:toDoContainer; */
-  /* border: #f3f3f3 1px solid; */
   margin-right: 0.5rem;
   width: 100%;
-  border-right: 1px solid #333;
-  border: #333 2px solid;
-  min-height: 50vh;
-  background-color: #A9927D;
+  /* min-height: 50vh; */
 }
 
 .todo-card{
@@ -204,14 +226,9 @@ to{
 }
 /* TO-DONE */
 .toDoneContainer{
-  /* grid-area:toDoneContainer; */
-  /* border: #f3f3f3 1px solid; */
-  width: 100%;
-  border: #333 2px solid;
-  min-height: 50vh;
-  background-color: #A9927D;
   margin-left: 0.5rem;
- 
+  width: 100%;
+  min-height: 50vh;
 }
 .todone-card{
   background-image: url('images/RETINO.png');
@@ -228,14 +245,36 @@ to{
     margin: auto;
     
   }
+  .visibility{
+    visibility:visible;
+  }
+  .btn-visibility{
+    background-color: inherit ;
+    border: none;
+    padding: 0.3rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    color: #f3f3f3;
+  }
+  .btn-visibility i{
+    color: #f3f3f3;
+  }
   .form{
     flex-direction: column;
     position: static;
     height: auto;
     width: 90%;
-    /* height: 80vh; */
-    margin: 3rem auto 0 auto;
+    margin: 1rem auto 0 auto;
   }
+  .form form{
+    height: 30vh;
+    border: 2px solid #333;
+  }
+  .bg-pic{
+    height: 250px;
+    border: 2px solid #333;
+  }
+  .pic{height: 250px;}
   .todos{
     flex-direction: column;
     align-items: center;
@@ -251,6 +290,18 @@ to{
     margin-top:1rem;
     width: 90%;
   }
+  /* .btn-todo-container button{
+    border:1px solid #333;
+    padding: 0.3rem;
+    margin-left: 0.3rem;
+    background-color: inherit;
+   }
+   .btn-todo:hover{
+     background-color: #A9927D;
+   }
+   .btn-toDone:hover{
+     background-color: #f3f3f3;
+   } */
 }
 /* Tablet */
 @media(min-width:501px) and (max-width:
