@@ -102,6 +102,7 @@ i{
 .pic img:first-child {
   font-family:'Source Code Pro', monospace ;
   animation: 'disk' 20s infinite  linear;
+  -webkit-animation:disk 20s infinite  linear
 }
 .pic img:nth-child(2){
   position: absolute;
@@ -307,9 +308,12 @@ to{
 @media(min-width:501px) and (max-width:
 1200px){}
 
+
 /* Normal Size */
-@media(min-width:769px) and (max-width:
-1200px){}
+@media(min-width:768px) and (max-width:
+1200px){
+  
+}
 
 /* Widescreen*/
 @media(min-width:1201px){}
